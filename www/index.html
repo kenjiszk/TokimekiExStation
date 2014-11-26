@@ -1,0 +1,53 @@
+<html>
+
+<head>
+<title>TokimekiExpressStation</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<style type="text/css">
+body{
+    margin: 0;
+    padding: 0px 0 0px 0;
+}
+div#footerArea {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #000000;
+    color: #fff;
+}
+</style>
+<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+<script>
+    $(document).ready(
+            function() {
+                setInterval(function() {
+                    $('#footerArea').html($('#footerArea').html());
+                }, 30000);
+            });
+</script>
+</head>
+
+<body onload="onBodyLoad()" ontouchmove="event.preventDefault()">
+
+<script type="text/javascript" src="js/enchant.js"></script>
+<script type="text/javascript" src="main.js"></script>
+<script type="text/javascript" src="shooting/shooting.js"></script>
+<script type="text/javascript" src="slidepazzle/slidepazzle.js"></script>
+
+<div id="footerArea">
+
+<script type="text/javascript">
+var nend_params = {"media":7699,"site":30443,"spot":52553,"type":1,"oriented":2};
+</script>
+
+<script type="text/javascript" src="http://js1.nend.net/js/nendAdLoader.js">
+</script>
+
+</div>
+
+</body>
+
+</html>
