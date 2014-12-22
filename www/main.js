@@ -389,7 +389,7 @@ window.onload = function() {
      'enemy_usa1.png', 'enemy_usa2.png', 'enemy_usa3.png', 'draw.png', 'you_win.png', 'you_lose.png',
      'icon_homepage.png', 'icon_facebook.png', 'icon_twitter.png', 'back.png',
      'card_front_s_ip4.png', 'card1_back_s_ip4.png', 'card_front_s_32_ip4.png', 'card1_back_s_32_ip4.png',
-     'icon_hikari.png');
+     'icon_hikari.png', 'icon_nozomi.png');
     // for shooting
     game.preload('shooting/fire_me.png', 'shooting/fire_enemy.png',
     'shooting/shooting_back2.png', 'shooting/shooting_start.png',
@@ -403,7 +403,7 @@ window.onload = function() {
     'shooting/airi_big_pannel.png', 'shooting/dead_ring.png', 'shooting/how_to_play.png', 'shooting/all_stage_clear.png',
     'shooting/enemy_usa1.png', 'shooting/enemy_usa2.png', 'shooting/enemy_usa3.png', 'shooting/hikari_big_fire_item.png');
 	// for slidepazzle
-	game.preload('slidepazzle/blank.png', 'slidepazzle/bottom_to_left.png', 'slidepazzle/bottom_to_right.png', 'slidepazzle/cross.png', 'slidepazzle/horizontal.png', 'slidepazzle/vertical.png', 'slidepazzle/top_to_left.png', 'slidepazzle/top_to_right.png', 'slidepazzle/no_road.png', 'slidepazzle/background.png', 'slidepazzle/nozomi.png', 'slidepazzle/slidepazzle_clear.png', 'slidepazzle/slidepazzle_gameover.png', 'slidepazzle/slidepazzle_title.png', 'slidepazzle/slidepazzle_point.png', 'slidepazzle/slidepazzle_clear_stage.png', 'slidepazzle/slidepazzle_howto.png', 'slidepazzle/slidepazzle_start.png', 'slidepazzle/slidepazzle_top_rail.png', 'slidepazzle/slidepazzle_highscore.png', 'slidepazzle/slidepazzle_stage_no.png', 'slidepazzle/slidepazzle_speed.png', 'slidepazzle/slidepazzle_point_white.png');
+	game.preload('slidepazzle/blank.png', 'slidepazzle/bottom_to_left.png', 'slidepazzle/bottom_to_right.png', 'slidepazzle/cross.png', 'slidepazzle/horizontal.png', 'slidepazzle/vertical.png', 'slidepazzle/top_to_left.png', 'slidepazzle/top_to_right.png', 'slidepazzle/no_road.png', 'slidepazzle/background.png', 'slidepazzle/nozomi.png', 'slidepazzle/slidepazzle_clear.png', 'slidepazzle/slidepazzle_gameover.png', 'slidepazzle/slidepazzle_title.png', 'slidepazzle/slidepazzle_point.png', 'slidepazzle/slidepazzle_clear_stage.png', 'slidepazzle/slidepazzle_howto.png', 'slidepazzle/slidepazzle_start.png', 'slidepazzle/slidepazzle_top_rail.png', 'slidepazzle/slidepazzle_highscore.png', 'slidepazzle/slidepazzle_stage_no.png', 'slidepazzle/slidepazzle_speed.png', 'slidepazzle/slidepazzle_point_white.png', 'slidepazzle/slidepazzle_howto_back.png', 'slidepazzle/slidepazzle_menu_hand.png');
 	game.onload = function() {
         audio_back.play();
 		game.pushScene(game.topScene());
@@ -470,7 +470,7 @@ window.onload = function() {
         scene.addChild(icon_shooting);
         
         var icon_slidepazzle = new Icon();
-        icon_slidepazzle.image = game.assets['icon_hikari.png'];
+        icon_slidepazzle.image = game.assets['icon_nozomi.png'];
         icon_slidepazzle.x = icon_twitter.x;
         icon_slidepazzle.y = icon_twitter.y + ICON_HEIGHT;
         scene.addChild(icon_slidepazzle);
@@ -950,6 +950,13 @@ window.onload = function() {
         game.fps = 30;
         var scene = new Scene();
         slidepazzle_menu(game, scene);
+        return scene;
+    }
+    
+    game.game3HowtoScene = function() {
+        game.fps = 30;
+        var scene = new Scene();
+        slidepazzle_howto_scene(game, scene);
         return scene;
     }
 

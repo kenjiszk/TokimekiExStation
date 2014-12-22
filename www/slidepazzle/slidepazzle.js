@@ -162,6 +162,7 @@ function slidepazzle_menu(game, scene) {
     slidepazzle_howto.x = (width-slidepazzle_howto.width)/2;
     slidepazzle_howto.y = title.y + title.height + (height-(title.y + title.height))/3*1.2;
     slidepazzle_howto.addEventListener(Event.TOUCH_START, function(e) {
+        game.replaceScene(game.game3HowtoScene());
     });
     scene.addChild(slidepazzle_howto);
     
@@ -178,6 +179,37 @@ function slidepazzle_menu(game, scene) {
     return scene;
 }
 
+function slidepazzle_howto_scene(game, scene) {
+    var bg = new Sprite(width, height);
+    bg.image = game.assets['slidepazzle/slidepazzle_howto_back.png'];
+    scene.addChild(bg);
+    // back button
+    var back_b = new Sprite(61, 56);
+    back_b.image = game.assets['back.png'];
+    back_b.y = 0;
+    back_b.x = width - back_b.width;
+    back_b.addEventListener('touchstart', function() {
+        game.replaceScene(game.game3SelectScene());
+    });
+    scene.addChild(back_b);
+    
+    var moving_pazzle = new Sprite(120, 120);
+    moving_pazzle.image = game.assets['slidepazzle/vertical.png'];
+    // 1と32はマジックナンバー
+    moving_pazzle.x = 20 + moving_pazzle.width + 1;
+    moving_pazzle.y = (height - 600)/2 + moving_pazzle.height * 2 + 33;
+    moving_pazzle.tl.delay(20).moveBy(moving_pazzle.width, 0, 20).delay(19).moveBy(-moving_pazzle.width, 0, 1).loop();
+    scene.addChild(moving_pazzle);
+    
+    var slidepazzle_howto_hand = new Sprite(90, 120);
+    slidepazzle_howto_hand.image = game.assets['slidepazzle/slidepazzle_menu_hand.png'];
+    slidepazzle_howto_hand.x = width*2/8;
+    slidepazzle_howto_hand.y = height*11/20;
+    slidepazzle_howto_hand.tl.moveBy(0, -20, 20).moveBy(0, 20, 20).delay(20).loop();
+    scene.addChild(slidepazzle_howto_hand);
+    
+    return scene;
+}
 
 function slidepazzle_start(game, scene) {
     console.log("ONE_STEP", ONE_STEP);
