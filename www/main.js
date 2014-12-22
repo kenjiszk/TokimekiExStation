@@ -403,7 +403,7 @@ window.onload = function() {
     'shooting/airi_big_pannel.png', 'shooting/dead_ring.png', 'shooting/how_to_play.png', 'shooting/all_stage_clear.png',
     'shooting/enemy_usa1.png', 'shooting/enemy_usa2.png', 'shooting/enemy_usa3.png', 'shooting/hikari_big_fire_item.png');
 	// for slidepazzle
-	game.preload('slidepazzle/blank.png', 'slidepazzle/bottom_to_left.png', 'slidepazzle/bottom_to_right.png', 'slidepazzle/cross.png', 'slidepazzle/horizontal.png', 'slidepazzle/vertical.png', 'slidepazzle/top_to_left.png', 'slidepazzle/top_to_right.png', 'slidepazzle/no_road.png');
+	game.preload('slidepazzle/blank.png', 'slidepazzle/bottom_to_left.png', 'slidepazzle/bottom_to_right.png', 'slidepazzle/cross.png', 'slidepazzle/horizontal.png', 'slidepazzle/vertical.png', 'slidepazzle/top_to_left.png', 'slidepazzle/top_to_right.png', 'slidepazzle/no_road.png', 'slidepazzle/background.png', 'slidepazzle/nozomi.png', 'slidepazzle/slidepazzle_clear.png', 'slidepazzle/slidepazzle_gameover.png', 'slidepazzle/slidepazzle_title.png', 'slidepazzle/slidepazzle_point.png', 'slidepazzle/slidepazzle_clear_stage.png', 'slidepazzle/slidepazzle_howto.png', 'slidepazzle/slidepazzle_start.png', 'slidepazzle/slidepazzle_top_rail.png', 'slidepazzle/slidepazzle_highscore.png', 'slidepazzle/slidepazzle_stage_no.png', 'slidepazzle/slidepazzle_speed.png', 'slidepazzle/slidepazzle_point_white.png');
 	game.onload = function() {
         audio_back.play();
 		game.pushScene(game.topScene());

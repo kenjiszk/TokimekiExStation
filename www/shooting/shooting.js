@@ -292,7 +292,7 @@ function shooting_menu(game, scene) {
     var point_digit = new Array(5);
     for (var i = 0; i < point_digit.length; i++) {
         point_digit[i] = new Sprite(POINT_HEIGHT, POINT_HEIGHT);
-        point_digit[i].image = game.assets['shooting/shooting_point.png'];
+        point_digit[i].image = game.assets['slidepazzle/slidepazzle_point.png'];
         point_digit[i].x = width*4/5 - POINT_HEIGHT * (i + 1);
         point_digit[i].x += POINT_HEIGHT/4 * i;
         point_digit[i].y = 0;
@@ -709,6 +709,7 @@ function shooting_start (game, scene) {
             audio_yozora.pause();
             audio_yozora.currentTime = 0;
         }
+        POINT = 0;
         game.replaceScene(game.game2SelectScene());
     });
     scene.addChild(back_b);
@@ -718,7 +719,7 @@ function shooting_start (game, scene) {
     var point_digit = new Array(5);
     for (var i = 0; i < point_digit.length; i++) {
         point_digit[i] = new Sprite(POINT_HEIGHT, POINT_HEIGHT);
-        point_digit[i].image = game.assets['shooting/shooting_point.png'];
+        point_digit[i].image = game.assets['slidepazzle/slidepazzle_point.png'];
         point_digit[i].x = width/3 - POINT_HEIGHT * (i + 1);
         point_digit[i].x += POINT_HEIGHT/4 * i;
         point_digit[i].y = 0;
