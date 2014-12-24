@@ -80,7 +80,7 @@ SlidePazzleClear = enchant.Class.create(Sprite, {
     }
 });
 
-GameOver = enchant.Class.create(Sprite, {
+Game3Over = enchant.Class.create(Sprite, {
 	initialize: function() {
 		var game = enchant.Game.instance;
 		Sprite.call(this, 600, 300);
@@ -331,7 +331,7 @@ function slidepazzle_start(game, scene) {
 	scene.addChild(nozomi);
 	
 	var clear = new SlidePazzleClear();
-	var game_over = new GameOver();
+	var game_over = new Game3Over();
 	
 	// shuffle pannel
 	var pannelSortArray = new Array(PANNEL_NUM);

@@ -289,7 +289,7 @@ Game1Start = enchant.Class.create(Sprite, {
 	}
 });
 
-GameOver = enchant.Class.create(Sprite, {
+Game1Over = enchant.Class.create(Sprite, {
 	initialize: function() {
 		var game = enchant.Game.instance;
 		Sprite.call(this, 500, 667);
@@ -541,7 +541,7 @@ window.onload = function() {
 	};
     
     game.game1SelectScene = function() {
-        game.fps = 25;
+        game.fps = 30;
         var scene = new Scene();
         
         var bg = new Sprite(width, height);
@@ -645,7 +645,7 @@ window.onload = function() {
     };
 
 	game.game1Scene = function() {
-        game.fps = 25;
+        game.fps = 30;
         Game_Music = Math.floor(Math.random()*3);
         if(Game_Music == 0) {
             audio_flush.play();
@@ -734,7 +734,7 @@ window.onload = function() {
 			scene.addChild(card1_back[i]);
 		}
         
-        var over = new GameOver();
+        var game1_over = new Game1Over();
         var is_over = 0;
         
         
@@ -750,18 +750,18 @@ window.onload = function() {
             if ((YouPointNum + UsaPointNum) == (SelectedCardNum/2) || is_over == 1) {
                 if (is_over == 0) {
                     if (YouPointNum > UsaPointNum) {
-                        over.image = game.assets['you_win.png'];
+                        game1_over.image = game.assets['you_win.png'];
                     } else if (YouPointNum < UsaPointNum) {
-                        over.image = game.assets['you_lose.png'];
+                        game1_over.image = game.assets['you_lose.png'];
                     } else {
-                        over.image = game.assets['draw.png'];
+                        game1_over.image = game.assets['draw.png'];
                     }
                     YouPointNum = 0;
                     UsaPointNum = 0;
                     Your_Turn = 1;
                     is_over = 1;
 
-                    scene.addChild(over);
+                    scene.addChild(game1_over);
                 }
 			} else if (Usa_Moving == 2) {
 				if (usa.rotation < 360) {
