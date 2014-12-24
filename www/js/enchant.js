@@ -2222,21 +2222,28 @@ enchant.Node = enchant.Class.create(enchant.EventTarget, {
             node = node.parentNode;
             parent = node.parentNode;
         }
+        // treeには今のnodeから親をたどった物が入っている
         var matrix = enchant.Matrix.instance;
         var stack = matrix.stack;
         var mat = [];
         var newmat, ox, oy;
+        // stackにはresetの結果が入っている this.stack.push([ 1, 0, 0, 1, 0, 0 ]);
         stack.push(tree[0]._matrix);
+        // tree[0]はいまのnode
         for (var i = 1, l = tree.length; i < l; i++) {
             node = tree[i];
             newmat = [];
+            // 回転行列を作って
             matrix.makeTransformMatrix(node, mat);
+            // 回転行列をかける
             matrix.multiply(stack[stack.length - 1], mat, newmat);
+            // 新しくする
             node._matrix = newmat;
             stack.push(newmat);
             ox = (typeof node._originX === 'number') ? node._originX : node._width / 2 || 0;
             oy = (typeof node._originY === 'number') ? node._originY : node._height / 2 || 0;
             var vec = [ ox, oy ];
+            //速度(単位時間に進んだ量を得る)
             matrix.multiplyVec(newmat, vec, vec);
             node._offsetX = vec[0] - ox;
             node._offsetY = vec[1] - oy;
@@ -4938,13 +4945,13 @@ enchant.LoadingScene = enchant.Class.create(enchant.Scene, {
             // avoid #167 https://github.com/wise9/enchant.js/issues/177
             progress = e.loaded / e.total * 1.0;
         });
-        bar.addEventListener('enterframe', function() {
-            _progress *= 0.9;
-            _progress += progress * 0.1;
-            image.context.fillStyle = '#fff';
-            image.context.fillRect(border, 0, (barWidth - border * 2) * _progress, barHeight);
-        });
-        this.addChild(bar);
+//        bar.addEventListener('enterframe', function() {
+//            _progress *= 0.9;
+//            _progress += progress * 0.1;
+//            image.context.fillStyle = '#fff';
+//            image.context.fillRect(border, 0, (barWidth - border * 2) * _progress, barHeight);
+//        });
+//        this.addChild(bar);
         this.addEventListener('load', function(e) {
             var core = enchant.Core.instance;
             core.removeScene(core.loadingScene);

@@ -967,5 +967,6 @@ window.onload = function() {
         return scene;
     }
 
-	game.start();
+	//game.start();
+    game.debug();
 }
